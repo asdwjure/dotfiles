@@ -142,7 +142,14 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+ulimit -n 65535
 
-alias minicom='minicom -c on'
+alias python=python3
+alias fzf='fd --type f --no-ignore --hidden | fzf --preview "batcat --style=numbers --color=always --line-range :500 {}"   --preview-window=right:40%:wrap   --bind "ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"'
+
 export BROWSER=google-chrome
 export PATH="/home/jrebernik/dev_scripts/bin:$PATH"
+export PATH="$HOME/neovim/build/bin:$PATH"
+export PATH="$PATH:/work/hil_framework/lib_testbed/tools"
+export PYTHONPATH="$PYTHONPATH:/work/hil_framework"
+export HIL_FRAMEWORK_PATH="/work/hil_framework"
